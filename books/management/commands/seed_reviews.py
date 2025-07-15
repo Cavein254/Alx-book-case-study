@@ -20,8 +20,8 @@ class Command(BaseCommand):
         self.stdout.write("Deleting existing data...")
         
 
-        books = list(Book.objects.values_list('id', flat=True))
-        customers = list(Customer.objects.values_list('id', flat=True))
+        books = list(Book.objects.all())
+        customers = list(Customer.objects.all())
 
         
 
@@ -40,11 +40,11 @@ class Command(BaseCommand):
                 continue
 
             Review.objects.create(
-                book_id=book,
-                reviewer_id=reviewer,
+                book=book,
+                reviewer=reviewer,
                 rating=random.randint(1, 5),
                 comment=fake.paragraph(nb_sentences=random.randint(2, 5)),
-                created_at=fake.date_time_between_dates(start_date='-3y', end_date='now')
+                created_at=fake.date_time_between(start_date='-3y', end_date='now')
             )
             
         self.stdout.write(self.style.SUCCESS(f'Successfully seeded {NUM_REVIEWS} reviews.'))

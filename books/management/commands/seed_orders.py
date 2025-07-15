@@ -39,7 +39,7 @@ class Command(BaseCommand):
                 price = round(random.uniform(5.0, 100.0), 2)
                 OrderItem.objects.create(
                     order=order,
-                    book_id=book,
+                    book=book,
                     quantity=quantity,
                     price=price
                 )
