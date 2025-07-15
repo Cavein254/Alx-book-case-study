@@ -1,0 +1,24 @@
+# Virtual environment
+.venv/
+env/
+venv/
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+
+# IDE specific files
+.idea/
+.vscode/
+
+# Temporary and log files
+*.log
+*.tmp
+
+# Sensitive information
+.env
+
+# Docker files
+mysql_data/
