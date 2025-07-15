@@ -35,7 +35,7 @@ class Book(models.Model):
     publication_date = models.DateField(null=True, blank=True)
     format = models.CharField(max_length=20, choices=FORMAT_CHOICES, default='PHYSICAL')
 
-    authors = models.ManyToManyField(Author, through='BookAuthor', related_name='books')
+    authors = models.ManyToManyField(Author, related_name='books')
     genres = models.ManyToManyField(Genre, related_name='books')
 
     def __str__(self):
