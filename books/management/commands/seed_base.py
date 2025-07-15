@@ -2,7 +2,7 @@ import random
 from django.core.management.base import BaseCommand
 from django.db import transaction
 from faker import Faker
-from ..models.book import Book, Author, Genre, Publisher
+from ...models.book import Book, Author, Genre, Publisher
 
 NUM_AUTHORS = 300
 NUM_PUBLISHERS = 60

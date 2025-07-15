@@ -10,7 +10,6 @@ class Command(BaseCommand):
         
         call_command('seed_base')
         call_command('seed_customers')
-        call_command('seed_books')
         call_command('seed_orders')
         call_command('seed_reviews')
 

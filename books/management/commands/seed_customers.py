@@ -4,7 +4,7 @@ from django.db import transaction
 from faker import Faker
 
 
-from ..models.customer import Customer, LoyaltyProgram
+from ...models.customer import Customer, LoyaltyProgram
 
 NUM_CUSTOMERS = 1000
 

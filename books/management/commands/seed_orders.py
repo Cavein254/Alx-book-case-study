@@ -3,7 +3,9 @@ from django.core.management.base import BaseCommand
 from django.db import transaction
 from faker import Faker
 
-from ..models.order import Order, OrderItem
+from ...models.order import Order, OrderItem
+from ...models.customer import Customer
+from ...models.book import Book
 
 NUM_ORDERS = 1000
 MAX_ITEMS_PER_ORDER = 5
@@ -20,8 +22,8 @@ class Command(BaseCommand):
         Order.objects.all().delete()
         OrderItem.objects.all().delete()
 
-        customers = list(Order.objects.values_list('customer', flat=True).distinct())
-        books = list(OrderItem.objects.values_list('book', flat=True).distinct())
+        customers = list(Customer.objects.all())
+        books = list(Book.objects.all())
 
         self.stdout.write(self.style.SUCCESS(f'Creating orders {NUM_ORDERS}...'))
         for _ in range(NUM_ORDERS):

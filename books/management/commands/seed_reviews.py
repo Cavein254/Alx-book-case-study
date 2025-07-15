@@ -3,9 +3,9 @@ from django.core.management.base import BaseCommand
 from django.db import transaction
 from faker import Faker
 
-from ..models.reviews import Review
-from ..models.book import Book
-from ..models.customer import Customer
+from ...models.reviews import Review
+from ...models.book import Book
+from ...models.customer import Customer
 
 NUM_REVIEWS = 2500
 
